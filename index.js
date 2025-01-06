@@ -51,7 +51,6 @@ function addGamesToPage(games) {
 
 // call the function we just defined using the correct variable
 // later, we'll call this function using a different list of games
-    addGamesToPage(GAMES_JSON);
 
 
 /*************************************************************************************
@@ -115,7 +114,6 @@ function filterFundedOnly() {
 // show all games
 function showAllGames() {
     deleteChildElements(gamesContainer);
-
     // add all games from the JSON data to the DOM
     addGamesToPage(GAMES_JSON);
 }
@@ -126,7 +124,9 @@ const fundedBtn = document.getElementById("funded-btn");
 const allBtn = document.getElementById("all-btn");
 
 // add event listeners with the correct functions to each button
-
+unfundedBtn.addEventListener("click", function(){filterUnfundedOnly();});
+fundedBtn.addEventListener("click", function(){filterFundedOnly();});
+allBtn.addEventListener("click", function(){showAllGames();});
 
 
 
