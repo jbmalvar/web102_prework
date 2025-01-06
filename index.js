@@ -39,12 +39,19 @@ function addGamesToPage(games) {
         // TIP: if your images are not displaying, make sure there is space
         // between the end of the src attribute and the end of the tag ("/>")
         // append the game to the games-container
-
+        card.innerHTML = `
+        <img src="${game.img}" class="game-img">
+        <h3>${game.name}</h3>
+        <p>${game.description}</p>`;
+        
+        const gamesContainer = document.getElementById("games-container");
+        gamesContainer.appendChild(card);
     }
 }
 
 // call the function we just defined using the correct variable
 // later, we'll call this function using a different list of games
+    addGamesToPage(GAMES_JSON);
 
 
 /*************************************************************************************
